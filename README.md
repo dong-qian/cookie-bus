@@ -57,7 +57,11 @@ Change profile
 
 ![Product Screen Shot 3][product-screenshot3]
 
-Create or update profile
+Create
+
+![Product Screen Shot 4][product-screenshot4]
+
+Edit
 
 ![Product Screen Shot 2][product-screenshot2]
 
@@ -163,4 +167,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [product-screenshot1]: doc/extension-1.png
 [product-screenshot2]: doc/extension-2.png
 [product-screenshot3]: doc/extension-3.png
-[product-screenshot3]: doc/extension-4.png
+[product-screenshot4]: doc/extension-4.png
