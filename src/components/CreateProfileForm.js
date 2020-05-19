@@ -12,7 +12,12 @@ const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
 
   const handleAddProfile = (e) => {
     e.preventDefault();
-    onSubmit(profile);
+    const newProfile = {
+      ...profile,
+      name: profile.name.trim(),
+      url: profile.url.trim(),
+    };
+    onSubmit(newProfile);
   };
 
   const handleChange = (e) => {
@@ -63,26 +68,6 @@ const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
           the tab user click import
         </div>
       </div>
-
-      <div className="relative flex items-start mt-4">
-        <div className="absolute flex items-center h-5">
-          <input
-            name="allCookies"
-            type="checkbox"
-            onChange={handleChange}
-            checked={profile.allCookies}
-            className="form-checkbox h-4 w-4 text-green-600 bg-green-300 transition duration-150 ease-in-out"
-          />
-        </div>
-        <div className="pl-8 text-sm leading-5">
-          <label
-            htmlFor="comments"
-            className="font-medium text-gray-700 tracking-wide"
-          >
-            Import all cookies
-          </label>
-        </div>
-      </div>
       <div className="relative flex items-start mt-3">
         <div className="absolute flex items-center h-5">
           <input
@@ -103,7 +88,7 @@ const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
         </div>
       </div>
 
-      <Divider />
+      <Divider color="text-green-500" />
 
       <div
         className={`${

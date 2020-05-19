@@ -16,9 +16,14 @@ const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
     setProfile(editProfile);
   }, [editProfile]);
 
-  const handleAddProfile = (e) => {
+  const handleUpdateProfile = (e) => {
     e.preventDefault();
-    onSubmit(profile);
+    const newProfile = {
+      ...profile,
+      name: profile.name.trim(),
+      url: profile.url.trim(),
+    };
+    onSubmit(newProfile);
   };
 
   const handleChange = (e) => {
@@ -49,7 +54,7 @@ const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
   return (
     <form
       className="p-4 bg-white shadow-lg rounded-md"
-      onSubmit={handleAddProfile}
+      onSubmit={handleUpdateProfile}
     >
       <label
         htmlFor="profile"
@@ -84,6 +89,9 @@ const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
           </label>
         </div>
       </div>
+      <div className="mt-2 p-2 text-gray-500 text-xs text-left rounded-md bg-gray-200">
+        Uncheck to import specific cookies
+      </div>
       <div className="relative flex items-start mt-3">
         <div className="absolute flex items-center h-5">
           <input
@@ -105,8 +113,13 @@ const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
         </div>
       </div>
 
+      <Divider color="border-green-500" />
+
       {!profile.allCookies && (
         <>
+          <div className="block mt-2 text-left text-sm font-medium leading-5 text-gray-700">
+            Cookies
+          </div>
           <div className="mt-4 w-full inline-flex justify-between">
             <input
               name="cookie"
@@ -146,8 +159,6 @@ const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
           </div>
         </>
       )}
-
-      <Divider />
 
       <div className="grid grid-cols-2 gap-5 mt-5">
         <Button type="submit" main>

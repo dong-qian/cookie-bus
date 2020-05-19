@@ -1,5 +1,10 @@
 import React from "react";
 
-export const Divider = () => (
-  <div className="border border-green-500 my-4"></div>
-);
+export const Divider = (props) => {
+  const defaultClass = "border my-4";
+  let variants = "border-gray-500";
+  if (props.color) {
+    variants = props.color;
+  }
+  return <div className={`${defaultClass} ${variants}`}></div>;
+};
