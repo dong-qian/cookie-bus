@@ -1,6 +1,8 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
+[![Release][release-shield]][release-url]
+[![Downloads][downloads-shield]][downloads-url]
 [![Stargazers][stars-shield]][stars-url]
+[![Forks][forks-shield]][forks-url]
+[![Contributors][contributors-shield]][contributors-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
@@ -16,7 +18,7 @@
   <p align="center">
     Import Cookies from any tab!
     <br />
-    <a href="https://github.com/qiandongyq/cookie-bus"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.0/cookie-bus.zip"><strong>Download »</strong></a>
     <br />
     <br />
     <a href="https://github.com/qiandongyq/cookie-bus/issues">Report Bug</a>
@@ -164,6 +166,10 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [issues-url]: https://github.com/qiandongyq/cookie-bus/issues
 [license-shield]: https://img.shields.io/github/license/qiandongyq/cookie-bus.svg?style=flat-square
 [license-url]: https://github.com/qiandongyq/cookie-bus/blob/master/LICENSE.txt
+[release-shield]: https://img.shields.io/github/release/qiandongyq/cookie-bus.svg?style=flat-square
+[release-url]: https://github.com/qiandongyq/cookie-bus/releases
+[downloads-shield]: https://img.shields.io/github/downloads/qiandongyq/cookie-bus/total.svg?style=flat-square
+[downloads-url]: https://github.com/qiandongyq/cookie-bus/releases/download/1.0.0/cookie-bus.zip
 [product-screenshot1]: doc/extension-1.png
 [product-screenshot2]: doc/extension-2.png
 [product-screenshot3]: doc/extension-3.png
