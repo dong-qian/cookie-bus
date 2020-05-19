@@ -37,6 +37,7 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+- [Known Issue](#known-issue)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -121,6 +122,12 @@ yarn install
 In [Google Chrome](https://www.google.com/chrome/), open up [chrome://extensions](chrome://extensions) in a new tab. Make sure the `Developer Mode` checkbox in the upper-right corner is turned on. Click `Load unpacked` and select the `dist` directory in this repository - your extension should now be loaded.
 
 ![Installed Extension in Google Chrome](doc/load-extension.jpg "Installed Extension in Google Chrome")
+
+<!-- Known Issue -->
+
+## Known Issue
+
+- Not working on `Incognito` Mode
 
 <!-- CONTRIBUTING -->
 
