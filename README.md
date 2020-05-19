@@ -160,6 +160,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [issues-url]: https://github.com/qiandongyq/cookie-bus/issues
 [license-shield]: https://img.shields.io/github/license/qiandongyq/cookie-bus.svg?style=flat-square
 [license-url]: https://github.com/qiandongyq/cookie-bus/blob/master/LICENSE.txt
-[product-screenshot1]: doc/extension-1.jpg
-[product-screenshot2]: doc/extension-2.jpg
-[product-screenshot3]: doc/extension-3.jpg
+[product-screenshot1]: doc/extension-1.png
+[product-screenshot2]: doc/extension-2.png
+[product-screenshot3]: doc/extension-3.png
+[product-screenshot3]: doc/extension-4.png
