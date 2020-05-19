@@ -90,7 +90,7 @@ const CreateProfileForm = ({ onSubmit, onBack }) => {
             htmlFor="comments"
             className="font-medium text-gray-700 tracking-wide"
           >
-            Default profile
+            Set as default profile
           </label>
         </div>
       </div>

@@ -13,7 +13,6 @@ export const Input = (props) => {
       required={props.required}
       disabled={props.disabled}
       type={props.type}
-      required={props.required}
       className={`${defaultClass} ${variants}`}
     />
   );

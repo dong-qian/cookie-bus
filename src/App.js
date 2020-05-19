@@ -154,9 +154,6 @@ const App = () => {
           <Toast toast={toast}></Toast>
         </div>
       )}
-      <div className="absolute right-0 bottom-0 text-xs text-gray-600 mr-2 mb-2">
-        Beta version 0.1.0
-      </div>
     </div>
   );
 };
