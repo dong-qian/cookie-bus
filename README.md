@@ -46,7 +46,7 @@
 
 ## About The Project
 
-Cookie Bus is an extremely simple `One Click` extension to help developer import cookies from one tab to another.
+**💻 Cookie Bus is an extremely simple `One Click 👍` web extension to help developer imports cookies from one tab to the current tab**
 
 ### Screenshots
 
@@ -54,11 +54,11 @@ One click import
 
 ![Product Screen Shot 1][product-screenshot1]
 
-Change preset profile
+Change profile
 
 ![Product Screen Shot 3][product-screenshot3]
 
-Create or Update profile
+Create or update profile
 
 ![Product Screen Shot 2][product-screenshot2]
 
@@ -68,6 +68,8 @@ Create or Update profile
 - [Tailwindcss](https://tailwindcss.com/)
 - [Chrome Api](https://developer.chrome.com/extensions/api_index)
 - [Google fonts](https://fonts.google.com/)
+- [Eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
 
 <!-- Demo -->
 
