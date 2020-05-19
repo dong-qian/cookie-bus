@@ -1,7 +1,7 @@
 import React from "react";
 import { Divider, Input, Button } from "../elements";
 
-const CreateProfileForm = ({ onSubmit, onBack }) => {
+const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
   const [profile, setProfile] = React.useState({
     name: "",
     url: "",
@@ -34,26 +34,34 @@ const CreateProfileForm = ({ onSubmit, onBack }) => {
       >
         Create a profile
       </label>
-      <div className="mt-1 rounded-md shadow-sm mt-4">
+      <div className="mt-1 rounded-md mt-4">
         <Input
           name="name"
           type="text"
           required
           onChange={handleChange}
           value={profile.name}
-          placeholder="Name (Unique)"
+          placeholder="Profile Name (Unique)"
         />
+        <div className="mt-2 ml-1 p-2 text-gray-500 text-xs text-left rounded-md bg-gray-200">
+          Any name but unique to this extension
+        </div>
       </div>
 
-      <div className="mt-1 rounded-md shadow-sm mt-4">
+      <div className="mt-1 rounded-md mt-4">
         <Input
           name="url"
           type="text"
           required
           onChange={handleChange}
           value={profile.url}
-          placeholder="Copy from (URL) ?"
+          placeholder="Copy from (url) ?"
         />
+        <div className="mt-2 ml-1 p-2 text-gray-500 text-xs text-left rounded-md bg-gray-200">
+          Ex: www.google.com <br></br>
+          This extension will copy all/required cookies from www.google.com to
+          the tab user click import
+        </div>
       </div>
 
       <div className="relative flex items-start mt-4">
@@ -97,14 +105,19 @@ const CreateProfileForm = ({ onSubmit, onBack }) => {
 
       <Divider />
 
-      <div className="grid grid-cols-2 gap-5 mt-5">
+      <div
+        className={`${
+          noProfile ? "w-full block" : "grid grid-cols-2 gap-5"
+        } mt-5`}
+      >
         <Button type="submit" main>
           Save
         </Button>
-
-        <Button type="button" onClick={onBack}>
-          Back
-        </Button>
+        {!noProfile && (
+          <Button type="button" onClick={onBack}>
+            Back
+          </Button>
+        )}
       </div>
     </form>
   );

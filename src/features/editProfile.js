@@ -4,10 +4,8 @@ import * as storage from "../api/storage";
 
 const EditProfile = ({ onBack, onSubmit, editProfile }) => {
   const handleSubmit = async (profile) => {
-    console.log("profile", profile);
     const response = await storage.updateProfile(profile);
     const { success, profiles } = response;
-    console.log("response", response);
     if (success) {
       onSubmit(profiles);
     }

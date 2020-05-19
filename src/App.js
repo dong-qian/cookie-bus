@@ -18,9 +18,11 @@ const App = () => {
     toast,
   } = state;
 
+  const noProfile = savedProfiles.length === 0;
+
   return (
     <div className="main relative px-8 pt-8 pb-10 flex flex-col items-center text-center container mx-auto bg-gray-900">
-      {savedProfiles.length === 0 ? (
+      {noProfile ? (
         <div className="w-full">
           <CreateProfile
             onBack={() =>
@@ -32,6 +34,7 @@ const App = () => {
                 payload: profiles,
               });
             }}
+            noProfile={noProfile}
           />
         </div>
       ) : (
@@ -124,6 +127,7 @@ const App = () => {
                     payload: profiles,
                   })
                 }
+                noProfile={noProfile}
               />
             </div>
           )}
