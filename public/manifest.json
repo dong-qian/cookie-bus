@@ -1,0 +1,17 @@
+{
+  "short_name": "Cookie Bus",
+  "name": "Cookie Bus",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Help developer to copy cookies",
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "browser_action": {
+    "default_icon": "icon-16.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["cookies", "tabs", "http://*/*", "https://*/*"]
+}

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  width: 350px;
+}
