@@ -47,7 +47,17 @@
 
 ## About The Project
 
-**💻 Cookie Bus is an extremely simple `One Click 👍` web extension to help developer imports cookies from one tab to the current tab**
+**💻 Cookie Bus is an extremely simple `One Click 👍` chrome extension to help developer imports cookies from one tab to another. It is not a cookie manipulate tool but a tool to reduce the copy and paste time when dealing with cookies in different enviorment**
+
+## Features
+
+✅ One Click
+
+✅ Import all cookies
+
+✅ Import individual or multiple specific cookies
+
+✅ Multiple profiles support
 
 ### Screenshots
 
@@ -170,7 +180,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [release-url]: https://github.com/qiandongyq/cookie-bus/releases
 [downloads-shield]: https://img.shields.io/github/downloads/qiandongyq/cookie-bus/total.svg?style=flat-square
 [downloads-url]: https://github.com/qiandongyq/cookie-bus/releases/download/1.0.0/cookie-bus.zip
-[product-screenshot1]: doc/extension-1.png
-[product-screenshot2]: doc/extension-2.png
-[product-screenshot3]: doc/extension-3.png
-[product-screenshot4]: doc/extension-4.png
+[product-screenshot1]: examples/extension-1.png
+[product-screenshot2]: examples/extension-2.png
+[product-screenshot3]: examples/extension-3.png
+[product-screenshot4]: examples/extension-4.png

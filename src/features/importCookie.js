@@ -18,11 +18,11 @@ const ImportCookie = ({ disabled, currentProfile, onSubmit }) => {
       }
 
       const activeTab = await chromeApi.getActiveTab();
+      const activeStore = await chromeApi.getStoreIdByTab(activeTab.id);
       for (const cookie of requiredCookies) {
-        await chromeApi.setCookie(cookie, activeTab);
+        await chromeApi.setCookie(cookie, activeTab, activeStore);
       }
       onSubmit({ color: "text-green-600", message: "Cookies is all set" });
-      setTimeout(() => onSubmit(null), 2000);
     } catch (err) {
       onSubmit({ color: "text-red-600", message: err.message });
     }

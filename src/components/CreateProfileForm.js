@@ -60,7 +60,7 @@ const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
           required
           onChange={handleChange}
           value={profile.url}
-          placeholder="Copy from (url) ?"
+          placeholder="Domain (url)"
         />
         <div className="mt-2 ml-1 p-2 text-gray-500 text-xs text-left rounded-md bg-gray-200">
           Ex: www.google.com <br></br>

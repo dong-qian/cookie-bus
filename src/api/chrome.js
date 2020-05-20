@@ -18,14 +18,24 @@ export const getActiveTab = () => {
   });
 };
 
-export const setCookie = (cookie, activeTab) => {
+export const setCookie = (cookie, activeTab, activeStore) => {
   return new Promise((resolve, reject) => {
     chrome.cookies.set({
       url: activeTab.url,
+      storeId: activeStore,
       path: "/",
       name: cookie.name,
       value: cookie.value,
     });
     resolve();
+  });
+};
+
+export const getStoreIdByTab = (tabId) => {
+  return new Promise((resolve, reject) => {
+    chrome.cookies.getAllCookieStores((cookieStores) => {
+      const store = cookieStores.find((store) => store.tabIds.includes(tabId));
+      resolve(store.id);
+    });
   });
 };
