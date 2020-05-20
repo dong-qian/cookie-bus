@@ -137,7 +137,7 @@ yarn install
 
 In [Google Chrome](https://www.google.com/chrome/), open up [chrome://extensions](chrome://extensions) in a new tab. Make sure the `Developer Mode` checkbox in the upper-right corner is turned on. Click `Load unpacked` and select the `dist` directory in this repository - your extension should now be loaded.
 
-![Installed Extension in Google Chrome](doc/load-extension.jpg "Installed Extension in Google Chrome")
+![Installed Extension in Google Chrome][load-extension]
 
 <!-- Known Issue -->
 
@@ -184,3 +184,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [product-screenshot2]: examples/extension-2.png
 [product-screenshot3]: examples/extension-3.png
 [product-screenshot4]: examples/extension-4.png
+[load-extension]: examples/load-extension.jpg
