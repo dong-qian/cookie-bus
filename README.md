@@ -18,7 +18,7 @@
   <p align="center">
     Import Cookies from any tabs!
     <br />
-    <a href="https://github.com/qiandongyq/cookie-bus/releases/latest/download/cookie-bus.zip"><strong>Download (Version 1.0.1) »</strong></a>
+    <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.1/cookie-bus-1.0.1.zip"><strong>Download (Version 1.0.1) »</strong></a>
     <br />
     <br />
     <a href="https://github.com/qiandongyq/cookie-bus/issues">Report Bug</a>
