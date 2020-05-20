@@ -13,12 +13,12 @@
     <img src="public/icon-128.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Cookie Bus</h3>
+  <h3 align="center">Cookie Bus </h3>
 
   <p align="center">
-    Import Cookies from any tab!
+    Import Cookies from any tabs!
     <br />
-    <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.0/cookie-bus.zip"><strong>Download »</strong></a>
+    <a href="https://github.com/qiandongyq/cookie-bus/releases/latest/download/cookie-bus.zip"><strong>Download (Version 1.0.1) »</strong></a>
     <br />
     <br />
     <a href="https://github.com/qiandongyq/cookie-bus/issues">Report Bug</a>
@@ -131,13 +131,19 @@ yarn install
 **Scripts**
 
 - `yarn start` - build css in watch mode and start webpack dev server
-- `yarn build` - builds css in production mode (purgecss unused css), build extension to `/dist` folder
+- `yarn build` - builds css in production mode (purgecss unused css), build extension to `/release/cookie-bus` folder
 
 **Load extension in Google Chrome**
 
-In [Google Chrome](https://www.google.com/chrome/), open up [chrome://extensions](chrome://extensions) in a new tab. Make sure the `Developer Mode` checkbox in the upper-right corner is turned on. Click `Load unpacked` and select the `dist` directory in this repository - your extension should now be loaded.
+In [Google Chrome](https://www.google.com/chrome/), open up [chrome://extensions](chrome://extensions) in a new tab. Make sure the `Developer Mode` checkbox in the upper-right corner is turned on. Click `Load unpacked` and select the `/release/cookie-bus` directory in this repository - your extension should now be loaded.
 
 ![Installed Extension in Google Chrome][load-extension]
+
+**Load extension in incognito mode**
+
+In extension page, click `Details` on `Cookie Bus` extension, enable the `Allow in incognito` switch
+
+![Load Extension in Incognito Mode][load-extension-in-incognito-mode]
 
 <!-- Known Issue -->
 
@@ -185,3 +191,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [product-screenshot3]: examples/extension-3.png
 [product-screenshot4]: examples/extension-4.png
 [load-extension]: examples/load-extension.jpg
+[load-extension-in-incognito-mode]: examples/allow_extension_in_incognito_mode.png

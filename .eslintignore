@@ -11,3 +11,4 @@
 test.js
 !.eslintrc.js
 /src/styles/*
+/release/*/**
