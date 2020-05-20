@@ -143,7 +143,7 @@ In [Google Chrome](https://www.google.com/chrome/), open up [chrome://extensions
 
 ## Known Issue
 
-- Not working on `Incognito` Mode
+- None
 
 <!-- CONTRIBUTING -->
 
