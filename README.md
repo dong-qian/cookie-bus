@@ -13,7 +13,7 @@
     <img src="public/icon-128.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Cookie Bus </h3>
+  <h3 align="center">Cookie Bus</h3>
 
   <p align="center">
     Import Cookies from any tabs!
@@ -47,7 +47,7 @@
 
 ## About The Project
 
-**💻 Cookie Bus is an extremely simple `One Click 👍` chrome extension to help developer imports cookies from one tab to another. It is not a cookie manipulate tool but a tool to reduce the copy and paste time when dealing with cookies in different enviorment**
+**💻 Cookie Bus is an extremely simple One-Click 👍 chrome extension to help developer imports cookies from specific domain to the current tab. It is not a cookie manipulate tool but a tool to reduce the time when dealing with cookies in a different environment.**
 
 ## Features
 
@@ -59,23 +59,31 @@
 
 ✅ Multiple profiles support
 
+<!-- Demo -->
+
+## Demo
+
+<a href="https://youtu.be/AEMhlEKemqs">
+  <img src="examples/ce1_play.jpg" alt="Cookie Bus Intro Demo Video" width="600" height="450">
+</a>
+
 ### Screenshots
 
 One click import
 
-![Product Screen Shot 1][product-screenshot1]
+<img src="examples/ce2.jpg" alt="alt text" width="400" height="250">
 
 Change profile
 
-![Product Screen Shot 3][product-screenshot3]
+<img src="examples/ce5.jpg" alt="alt text" width="400" height="250">
 
 Create
 
-![Product Screen Shot 4][product-screenshot4]
+<img src="examples/ce3.jpg" alt="alt text" width="400" height="250">
 
 Edit
 
-![Product Screen Shot 2][product-screenshot2]
+<img src="examples/ce4.jpg" alt="alt text" width="400" height="250">
 
 ### Built With
 
@@ -85,12 +93,6 @@ Edit
 - [Google fonts](https://fonts.google.com/)
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-
-<!-- Demo -->
-
-## Demo
-
-**WIP**
 
 <!-- GETTING STARTED -->
 
@@ -131,19 +133,19 @@ yarn install
 **Scripts**
 
 - `yarn start` - build css in watch mode and start webpack dev server
-- `yarn build` - builds css in production mode (purgecss unused css), build extension to `/release/cookie-bus` folder
+- `yarn build` - builds css in production mode (purgecss unused css), build extension to `/release/cookie-bus-1.0.1` folder
 
 **Load extension in Google Chrome**
 
-In [Google Chrome](https://www.google.com/chrome/), open up [chrome://extensions](chrome://extensions) in a new tab. Make sure the `Developer Mode` checkbox in the upper-right corner is turned on. Click `Load unpacked` and select the `/release/cookie-bus` directory in this repository - your extension should now be loaded.
+In [Google Chrome](https://www.google.com/chrome/), open up [chrome://extensions](chrome://extensions) in a new tab. Make sure the `Developer Mode` checkbox in the upper-right corner is turned on. Click `Load unpacked` and select the `/release/cookie-bus-1.0.1` directory in this repository - your extension should now be loaded.
 
-![Installed Extension in Google Chrome][load-extension]
+<img src="examples/load-extension.jpg" alt="load extension">
 
 **Load extension in incognito mode**
 
 In extension page, click `Details` on `Cookie Bus` extension, enable the `Allow in incognito` switch
 
-![Load Extension in Incognito Mode][load-extension-in-incognito-mode]
+<img src="examples/incognito.png" alt="incognito mode">
 
 <!-- Known Issue -->
 
@@ -186,9 +188,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [release-url]: https://github.com/qiandongyq/cookie-bus/releases
 [downloads-shield]: https://img.shields.io/github/downloads/qiandongyq/cookie-bus/total.svg?style=flat-square
 [downloads-url]: https://github.com/qiandongyq/cookie-bus/releases/download/1.0.0/cookie-bus.zip
-[product-screenshot1]: examples/extension-1.png
-[product-screenshot2]: examples/extension-2.png
-[product-screenshot3]: examples/extension-3.png
-[product-screenshot4]: examples/extension-4.png
-[load-extension]: examples/load-extension.jpg
-[load-extension-in-incognito-mode]: examples/allow_extension_in_incognito_mode.png
+[version]: 1.0.1

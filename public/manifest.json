@@ -3,7 +3,7 @@
   "name": "Cookie Bus",
   "version": "1.0.1",
   "manifest_version": 2,
-  "description": "Cookie Bus is an extremely simple One Click chrome extension to help developer imports cookies from one tab to another. It is not a cookie manipulate tool but a tool to reduce the copy and paste time when dealing with cookies in different enviorment",
+  "description": "Cookie Bus is an extremely simple One Click chrome extension to import cookies",
   "icons": {
     "16": "icon-16.png",
     "48": "icon-48.png",
