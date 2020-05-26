@@ -10,7 +10,7 @@ build() {
 
     react-scripts build
 
-    path="cookie-bus-1.0.1"
+    path="cookie-bus-1.0.2"
 
     mkdir -p release/$path
     cp -r build/* release/$path
