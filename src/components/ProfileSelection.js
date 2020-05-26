@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '../elements';
 
-const ProfileSelection = ({
+export const ProfileSelection = ({
   profile,
   activeProfile,
   onSelect,
@@ -62,5 +62,3 @@ const ProfileSelection = ({
     </div>
   );
 };
-
-export default ProfileSelection;

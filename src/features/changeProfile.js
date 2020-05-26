@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileSelection from '../components/ProfileSelection';
+import { ProfileSelection } from '../components';
 import * as storage from '../api/storage';
 import { useFeatureStore, useProfileStore } from '../store';
 
@@ -46,7 +46,7 @@ export const ChangeProfile = React.memo(() => {
       <div className="block text-md font-medium text-center uppercase">
         Change Profile
       </div>
-      <div className="w-full p-4 grid gap-4">
+      <div className="w-full mt-5 grid gap-4">
         {savedProfiles.map((profile) => {
           const activeProfile = currentProfile.name === profile.name;
           return (

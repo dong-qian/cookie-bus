@@ -1,7 +1,7 @@
 import React from 'react';
 import { Divider, Input, Button, Toggle } from '../elements';
 
-const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
+export const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
   const [profile, setProfile] = React.useState({
     name: '',
     url: '',
@@ -150,5 +150,3 @@ const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
     </form>
   );
 };
-
-export default EditProfileForm;

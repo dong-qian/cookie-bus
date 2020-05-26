@@ -1,5 +1,5 @@
 import React from 'react';
-import EditProfileForm from '../components/EditProfileForm';
+import { EditProfileForm } from '../components';
 import * as storage from '../api/storage';
 import { useProfileStore, useFeatureStore } from '../store';
 

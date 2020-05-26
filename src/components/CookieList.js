@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Input } from '../elements';
+import { Button, Input, Divider } from '../elements';
 
 export const CookieList = ({ cookieList, onBack, onSearch }) => {
   const [query, setQuery] = React.useState('');
@@ -23,6 +23,7 @@ export const CookieList = ({ cookieList, onBack, onSearch }) => {
           placeholder="Search"
         />
       </div>
+      <Divider />
       {cookieList.length > 0 ? (
         <>
           {cookieList.map((cookie) => (

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Raleway', 'Balsamiq Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: theme('colors.gray.100');
   font-size: 1rem;
 }

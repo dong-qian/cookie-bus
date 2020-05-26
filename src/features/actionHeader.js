@@ -39,8 +39,14 @@ const AddProfileIcon = () => (
   </svg>
 );
 
+const ImportCookieIcon = () => (
+  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+  </svg>
+);
+
 export const ActionHeader = () => {
-  const { fDispatch, fActionType } = useFeatureStore();
+  const { fState, fDispatch, fActionType } = useFeatureStore();
   const { pDispatch, pActionType } = useProfileStore();
 
   const handleDeleteAllCookies = async () => {
@@ -75,30 +81,42 @@ export const ActionHeader = () => {
       console.log(err);
     }
   };
+
   const actions = [
     {
-      name: 'Delete all cookies',
-      Icon: DeleteIcon,
-      desc: 'Delete all cookies',
-      action: async () => await handleDeleteAllCookies()
-    },
-    {
-      name: 'Show of cookies',
-      Icon: ListIcon,
-      desc: 'Show all cookies',
-      action: async () => await handleShowAllCookies()
-    },
-    {
-      name: 'Change Profile',
-      Icon: ProfilesIcon,
-      desc: 'Change profile',
-      action: () => fDispatch({ type: fActionType.CHANGE_PROFILE })
+      name: 'Import cookie',
+      Icon: ImportCookieIcon,
+      desc: 'Import cookie',
+      action: () => fDispatch({ type: fActionType.IMPORT_COOKIE }),
+      active: fState.currentFeature === fActionType.IMPORT_COOKIE
     },
     {
       name: 'Create profile',
       Icon: AddProfileIcon,
       desc: 'Create profile',
-      action: () => fDispatch({ type: fActionType.CREATE_PROFILE })
+      action: () => fDispatch({ type: fActionType.CREATE_PROFILE }),
+      active: fState.currentFeature === fActionType.CREATE_PROFILE
+    },
+    {
+      name: 'Change Profile',
+      Icon: ProfilesIcon,
+      desc: 'Change profile',
+      action: () => fDispatch({ type: fActionType.CHANGE_PROFILE }),
+      active: fState.currentFeature === fActionType.CHANGE_PROFILE
+    },
+    {
+      name: 'Show of cookies',
+      Icon: ListIcon,
+      desc: 'Show all cookies',
+      action: async () => await handleShowAllCookies(),
+      active: fState.currentFeature === fActionType.SHOW_COOKIE_LIST
+    },
+    {
+      name: 'Delete all cookies',
+      Icon: DeleteIcon,
+      desc: 'Delete all cookies',
+      action: async () => await handleDeleteAllCookies(),
+      active: false
     }
   ];
 

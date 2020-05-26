@@ -5,8 +5,7 @@ const actionType = {
   CREATE_PROFILE: 'CREATE_PROFILE',
   CHANGE_PROFILE: 'CHANGE_PROFILE',
   EDIT_PROFILE: 'EDIT_PROFILE',
-  SHOW_COOKIE_LIST: 'SHOW_COOKIE_LIST',
-  COMPLETE: 'COMPLETE'
+  SHOW_COOKIE_LIST: 'SHOW_COOKIE_LIST'
 };
 
 const initialState = {
@@ -20,7 +19,6 @@ const reducer = (state, action) => {
     case actionType.CHANGE_PROFILE:
     case actionType.EDIT_PROFILE:
     case actionType.SHOW_COOKIE_LIST:
-    case actionType.COMPLETE:
       return {
         currentFeature: action.type
       };

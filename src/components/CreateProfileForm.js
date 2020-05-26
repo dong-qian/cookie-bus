@@ -1,7 +1,7 @@
 import React from 'react';
 import { Divider, Input, Button, Toggle } from '../elements';
 
-const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
+export const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
   const [profile, setProfile] = React.useState({
     name: '',
     url: '',
@@ -94,5 +94,3 @@ const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
     </form>
   );
 };
-
-export default CreateProfileForm;

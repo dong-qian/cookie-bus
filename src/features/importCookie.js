@@ -2,9 +2,11 @@ import React from 'react';
 import { Button } from '../elements';
 import * as chromeApi from '../api/chrome';
 import { useProfileStore } from '../store';
+import { WithCompletion } from '../components';
 
-export const ImportCookie = React.memo(() => {
+export const ImportCookie = () => {
   const { pState } = useProfileStore();
+  const [show, setShow] = React.useState(false);
   const { currentProfile } = pState;
   const handleImport = async () => {
     if (
@@ -13,7 +15,6 @@ export const ImportCookie = React.memo(() => {
     ) {
       return;
     }
-
     try {
       const allCookies = await chromeApi.getAllCookies(currentProfile);
       let requiredCookies = allCookies;
@@ -22,25 +23,37 @@ export const ImportCookie = React.memo(() => {
           currentProfile.cookies.includes(cookie.name)
         );
       }
-
       const activeTab = await chromeApi.getActiveTab();
       const activeStore = await chromeApi.getStoreByTab(activeTab);
       for (const cookie of requiredCookies) {
         await chromeApi.setCookie(cookie, activeTab, activeStore);
       }
+      setShow(true);
+      setTimeout(() => setShow(false), 500);
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <>
-      <div className="mb-5 text-xl uppercase text-center">
-        {currentProfile.name}
-      </div>
-      <Button secondary type="button" onClick={handleImport} disabled={false}>
-        Import
-      </Button>
-    </>
+    <WithCompletion show={show}>
+      {pState.savedProfiles.length === 0 ? (
+        <div className="text-center mt-4">No Profiles</div>
+      ) : (
+        <>
+          <div className="mb-5 text-xl uppercase text-center">
+            {currentProfile.name}
+          </div>
+          <Button
+            secondary
+            type="button"
+            onClick={handleImport}
+            disabled={false}
+          >
+            Import
+          </Button>
+        </>
+      )}
+    </WithCompletion>
   );
-});
+};
