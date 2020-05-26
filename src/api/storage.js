@@ -1,26 +1,26 @@
 export const saveData = async (data) => {
   const cookie = JSON.stringify(data);
-  await localStorage.setItem("cookie-bus", cookie);
+  await localStorage.setItem('cookie-bus', cookie);
 };
 
 export const getData = async () => {
   try {
-    const data = await localStorage.getItem("cookie-bus");
+    const data = await localStorage.getItem('cookie-bus');
     if (data) {
       return {
         success: true,
-        profiles: JSON.parse(data),
+        profiles: JSON.parse(data)
       };
     } else {
       return {
         success: true,
-        profiles: [],
+        profiles: []
       };
     }
   } catch (err) {
     return {
       success: false,
-      profiles: [],
+      profiles: []
     };
   }
 };
@@ -35,21 +35,21 @@ export const createProfile = async (profile) => {
         if (profile.default) {
           profiles = profiles.map((p) => ({
             ...p,
-            default: false,
+            default: false
           }));
         }
         const newProfiles = [...profiles, profile];
         await saveData(newProfiles);
         return {
           success: true,
-          profiles: newProfiles,
+          profiles: newProfiles
         };
       }
     }
   } catch (err) {
     return {
       success: false,
-      error: err,
+      error: err
     };
   }
 };
@@ -64,7 +64,7 @@ export const updateProfile = async (profile) => {
           if (curr.name !== profile.name) {
             acc.push({
               ...curr,
-              default: false,
+              default: false
             });
           }
           return acc;
@@ -76,13 +76,13 @@ export const updateProfile = async (profile) => {
       await saveData(newProfiles);
       return {
         success: true,
-        profiles: newProfiles,
+        profiles: newProfiles
       };
     }
   } catch (err) {
     return {
       success: false,
-      error: err,
+      error: err
     };
   }
 };
@@ -96,13 +96,13 @@ export const deleteProfile = async (profile) => {
       await saveData(newProfiles);
       return {
         success: true,
-        profiles: newProfiles,
+        profiles: newProfiles
       };
     }
   } catch (err) {
     return {
       success: false,
-      error: err,
+      error: err
     };
   }
 };

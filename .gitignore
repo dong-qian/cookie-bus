@@ -24,3 +24,6 @@ yarn-error.log*
 
 # auto generated css file
 /src/styles/index.css
+
+# .eslintcache file that will show up sometimes by adding the following line to your .gitignore file:
+.eslintcache

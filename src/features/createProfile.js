@@ -1,23 +1,30 @@
-import React from "react";
-import CreateProfileForm from "../components/CreateProfileForm";
-import * as storage from "../api/storage";
+import React from 'react';
+import CreateProfileForm from '../components/CreateProfileForm';
+import * as storage from '../api/storage';
+import { useProfileStore, useFeatureStore } from '../store';
 
-const CreateProfile = ({ onBack, onSubmit, noProfile }) => {
+export const CreateProfile = React.memo(() => {
+  const { pState, pDispatch, pActionType } = useProfileStore();
+  const { fDispatch, fActionType } = useFeatureStore();
   const handleSubmit = async (profile) => {
     const response = await storage.createProfile(profile);
     const { success, profiles } = response;
     if (success) {
-      onSubmit(profiles);
+      pDispatch({
+        type: pActionType.UPDATE_PROFILES,
+        payload: profiles
+      });
+      fDispatch({
+        type: fActionType.IMPORT_COOKIE
+      });
     }
   };
 
   return (
     <CreateProfileForm
       onSubmit={handleSubmit}
-      onBack={onBack}
-      noProfile={noProfile}
+      onBack={() => fDispatch({ type: fActionType.IMPORT_COOKIE })}
+      noProfile={pState.savedProfiles.length === 0}
     />
   );
-};
-
-export default CreateProfile;
+});

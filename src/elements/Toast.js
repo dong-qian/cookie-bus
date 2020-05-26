@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export const Toast = ({ toast }) => {
-  const [animationClass, setAnimationClass] = React.useState("");
+  const [animationClass, setAnimationClass] = React.useState('');
   React.useEffect(() => {
-    setAnimationClass("opacity-100");
+    setAnimationClass('opacity-100');
   }, []);
 
   return (

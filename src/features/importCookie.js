@@ -1,10 +1,16 @@
-import React from "react";
-import { Button } from "../elements";
-import * as chromeApi from "../api/chrome";
+import React from 'react';
+import { Button } from '../elements';
+import * as chromeApi from '../api/chrome';
+import { useProfileStore } from '../store';
 
-const ImportCookie = ({ disabled, currentProfile, onSubmit }) => {
+export const ImportCookie = React.memo(() => {
+  const { pState } = useProfileStore();
+  const { currentProfile } = pState;
   const handleImport = async () => {
-    if (!currentProfile.allCookies && currentProfile.cookies.length === 0) {
+    if (
+      !pState.currentProfile.allCookies &&
+      pState.currentProfile.cookies.length === 0
+    ) {
       return;
     }
 
@@ -18,21 +24,23 @@ const ImportCookie = ({ disabled, currentProfile, onSubmit }) => {
       }
 
       const activeTab = await chromeApi.getActiveTab();
-      const activeStore = await chromeApi.getStoreIdByTab(activeTab.id);
+      const activeStore = await chromeApi.getStoreByTab(activeTab);
       for (const cookie of requiredCookies) {
         await chromeApi.setCookie(cookie, activeTab, activeStore);
       }
-      onSubmit({ color: "text-green-600", message: "Cookies is all set" });
     } catch (err) {
-      onSubmit({ color: "text-red-600", message: err.message });
+      console.log(err);
     }
   };
 
   return (
-    <Button main type="button" onClick={handleImport} disabled={disabled}>
-      Import
-    </Button>
+    <>
+      <div className="mb-5 text-xl uppercase text-center">
+        {currentProfile.name}
+      </div>
+      <Button secondary type="button" onClick={handleImport} disabled={false}>
+        Import
+      </Button>
+    </>
   );
-};
-
-export default ImportCookie;
+});

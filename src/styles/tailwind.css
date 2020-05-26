@@ -2,8 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-.main {
-  font-family: "Raleway", sans-serif;
+body {
+  font-family: 'Raleway', 'Balsamiq Sans', sans-serif;
+  color: theme('colors.gray.100');
   font-size: 1rem;
+}
+
+button,
+input {
+  @apply transition;
+  @apply ease-in-out;
+  @apply duration-150;
+  @apply shadow-md;
+  @apply rounded-md;
+}
+
+button:focus,
+input:focus {
+  @apply outline-none;
+}
+
+input:focus {
+  @apply shadow-outline;
+}
+
+.container {
   width: 350px;
 }

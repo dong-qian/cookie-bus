@@ -1,21 +1,17 @@
-import React from "react";
-import { Button } from "../elements";
+import React from 'react';
+import { Button } from '../elements';
 
 const ProfileSelection = ({
   profile,
   activeProfile,
   onSelect,
   onEdit,
-  onDelete,
+  onDelete
 }) => {
   return (
     <div className="grid grid-cols-8 gap-4">
       <div className="col-span-6">
-        <Button
-          className="w-full bg-gray-300 "
-          onClick={() => onSelect(profile)}
-          secondary={activeProfile}
-        >
+        <Button onClick={() => onSelect(profile)} main={activeProfile}>
           {activeProfile && (
             <div className="absolute left-0 ml-4">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
@@ -35,7 +31,7 @@ const ProfileSelection = ({
         onClick={() => onEdit(profile)}
       >
         <svg
-          className="w-5 fill-current text-gray-600 hover:text-gray-900"
+          className="w-5 fill-current text-primary-lighter hover:text-secondary"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -52,7 +48,7 @@ const ProfileSelection = ({
         onClick={() => onDelete(profile)}
       >
         <svg
-          className="w-5 fill-current text-red-600 hover:text-red-900"
+          className="w-5 fill-current text-primary-lighter hover:text-secondary"
           fill="currentColor "
           viewBox="0 0 20 20"
         >
