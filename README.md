@@ -16,14 +16,20 @@
   <h3 align="center">Cookie Bus</h3>
 
   <p align="center">
-    Import Cookies from any tabs!
+    Import Cookies from any domain
     <br />
-    <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.2/cookie-bus-1.0.2.zip"><strong>Download (Version 1.0.2) »</strong></a>
+    <br />
+    <a href="https://chrome.google.com/webstore/detail/cookie-bus/lgaiahngangkjgjpcaamhkbecdaecfkb"><strong>Install from chrome web store</strong></a>
+    </br>
+    <strong>Or</storng>
+    </br>
+    <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.2/cookie-bus-1.0.2.zip"><strong>Download here »</strong></a>
     <br />
     <br />
     <a href="https://github.com/qiandongyq/cookie-bus/issues">Report Bug</a>
     ·
     <a href="https://github.com/qiandongyq/cookie-bus/issues">Request Feature</a>
+
   </p>
 </p>
 
@@ -53,9 +59,13 @@
 
 ✅ One Click
 
-✅ Import all cookies
+✅ Import cookies from any domain
 
-✅ Import individual or multiple specific cookies
+✅ Custom cookies to import
+
+✅ Delete all cookies
+
+✅ List all cookies
 
 ✅ Multiple profiles support
 
@@ -67,23 +77,27 @@
   <img src="examples/ce1_play.jpg" alt="Cookie Bus Intro Demo Video" width="600" height="450">
 </a>
 
-### Screenshots
+## Screenshots
 
-One click import
+One Click Import
 
-<img src="examples/ce2.jpg" alt="alt text" width="400" height="250">
+<img src="examples/ce-3.jpg" alt="import cookies">
 
-Change profile
+Create Profile
 
-<img src="examples/ce5.jpg" alt="alt text" width="400" height="250">
+<img src="examples/ce-2.jpg" alt="create profile">
 
-Create
+Change Profile
 
-<img src="examples/ce3.jpg" alt="alt text" width="400" height="250">
+<img src="examples/ce-4.jpg" alt="change profile" >
 
-Edit
+Edit Profile
 
-<img src="examples/ce4.jpg" alt="alt text" width="400" height="250">
+<img src="examples/ce-5.jpg" alt="edit profile" >
+
+List of Cookies
+
+<img src="examples/ce-6.jpg" alt="list of cookies" >
 
 ### Built With
 
