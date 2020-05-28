@@ -19,17 +19,16 @@
     Import Cookies from any domain
     <br />
     <br />
-    <a href="https://chrome.google.com/webstore/detail/cookie-bus/lgaiahngangkjgjpcaamhkbecdaecfkb"><strong>Install from chrome web store</strong></a>
+    <a href="https://chrome.google.com/webstore/detail/cookie-bus/lgaiahngangkjgjpcaamhkbecdaecfkb"><strong>Install from chrome web store (1.0.2)</strong></a>
     </br>
-    <strong>Or</storng>
+    <strong>Or</strong>
     </br>
-    <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.3/cookie-bus-1.0.3.zip"><strong>Download here »</strong></a>
+    <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.3/cookie-bus-1.0.3.zip"><strong>Download here (1.0.3) »</strong></a>
     <br />
     <br />
     <a href="https://github.com/qiandongyq/cookie-bus/issues">Report Bug</a>
     ·
     <a href="https://github.com/qiandongyq/cookie-bus/issues">Request Feature</a>
-
   </p>
 </p>
 
