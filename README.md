@@ -1,9 +1,8 @@
+[![Version][version-shield]][version-url]
+[![Users][users-shield]][users-url]
 [![Release][release-shield]][release-url]
-[![Downloads][downloads-shield]][downloads-url]
 [![Stargazers][stars-shield]][stars-url]
-[![Forks][forks-shield]][forks-url]
-[![Contributors][contributors-shield]][contributors-url]
-[![Issues][issues-shield]][issues-url]
+[![Downloads][downloads-shield]][downloads-url]
 [![MIT License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
@@ -19,9 +18,8 @@
     Import Cookies from any domain
     <br />
     <br />
-    <a href="https://chrome.google.com/webstore/detail/cookie-bus/lgaiahngangkjgjpcaamhkbecdaecfkb"><strong>Install from chrome web store (1.0.2)</strong></a>
+    <a href="https://chrome.google.com/webstore/detail/cookie-bus/lgaiahngangkjgjpcaamhkbecdaecfkb"><strong>Install from chrome web store (1.0.3)</strong></a>
     </br>
-    <strong>Or</strong>
     </br>
     <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.3/cookie-bus-1.0.3.zip"><strong>Download here (1.0.3) »</strong></a>
     <br />
@@ -200,5 +198,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [release-shield]: https://img.shields.io/github/release/qiandongyq/cookie-bus.svg?style=flat-square
 [release-url]: https://github.com/qiandongyq/cookie-bus/releases
 [downloads-shield]: https://img.shields.io/github/downloads/qiandongyq/cookie-bus/total.svg?style=flat-square
+[users-shield]: https://img.shields.io/chrome-web-store/users/lgaiahngangkjgjpcaamhkbecdaecfkb?style=flat-square
+[users-url]: https://chrome.google.com/webstore/detail/lgaiahngangkjgjpcaamhkbecdaecfkb/publish-accepted?authuser=0&hl=en
+[version-shield]: https://img.shields.io/chrome-web-store/v/lgaiahngangkjgjpcaamhkbecdaecfkb?style=flat-square
+[version-url]: https://chrome.google.com/webstore/detail/lgaiahngangkjgjpcaamhkbecdaecfkb/publish-accepted?authuser=0&hl=en
 [downloads-url]: https://github.com/qiandongyq/cookie-bus/releases/download/1.0.0/cookie-bus.zip
 [version]: 1.0.3
