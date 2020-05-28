@@ -58,12 +58,10 @@ export const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
           required
           onChange={handleChange}
           value={profile.url}
-          placeholder="Domain (url)"
+          placeholder="Starts with https:// or http://"
         />
-        <div className="mt-3 text-primary-lighter text-xs">
-          Ex: www.google.com <br></br>
-          This extension will copy all/required cookies from www.google.com to
-          the active tab
+        <div className="mt-3 text-primary-lighter text-sm">
+          Ex: https://www.example.com<br></br>
         </div>
       </div>
       <div className="flex justify-between my-4">

@@ -62,8 +62,23 @@ export const ActionHeader = () => {
       }
 
       pDispatch({ type: pActionType.SET_CURRENT_COOKIES, payload: [] });
+      fDispatch({
+        type: fActionType.SHOW_COMPLETION,
+        payload: { show: true, message: 'Cookies are deleted' }
+      });
+      setTimeout(
+        () =>
+          fDispatch({
+            type: fActionType.SHOW_COMPLETION,
+            payload: { show: false, message: '' }
+          }),
+        500
+      );
     } catch (err) {
-      console.log(err);
+      fDispatch({
+        type: fActionType.SHOW_ERROR,
+        payload: { show: true, message: err }
+      });
     }
   };
 
@@ -78,7 +93,10 @@ export const ActionHeader = () => {
       pDispatch({ type: pActionType.SET_CURRENT_COOKIES, payload: cookies });
       fDispatch({ type: fActionType.SHOW_COOKIE_LIST });
     } catch (err) {
-      console.log(err);
+      fDispatch({
+        type: fActionType.SHOW_ERROR,
+        payload: { show: true, message: err }
+      });
     }
   };
 

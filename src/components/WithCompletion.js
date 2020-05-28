@@ -1,6 +1,11 @@
 import React from 'react';
+import { useFeatureStore } from '../store';
 
-export const WithCompletion = ({ children, show }) => {
+export const WithCompletion = ({ children }) => {
+  const { fState } = useFeatureStore();
+  const {
+    completion: { show, message }
+  } = fState;
   return (
     <div className="relative">
       <div
@@ -11,9 +16,11 @@ export const WithCompletion = ({ children, show }) => {
         {children}
       </div>
       {show && (
-        <div className={`absolute inset-0 flex justify-center items-center`}>
+        <div
+          className={`absolute inset-0 flex flex-col justify-center items-center`}
+        >
           <svg
-            className="w-full h-full text-secondary"
+            className="w-24 text-secondary"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -23,6 +30,7 @@ export const WithCompletion = ({ children, show }) => {
               fillRule="evenodd"
             ></path>
           </svg>
+          <div>{message}</div>
         </div>
       )}
     </div>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   color: theme('colors.gray.100');
   font-size: 1rem;
 }

@@ -8,6 +8,7 @@ import {
   ShowAllCookies
 } from '.';
 import * as storage from '../api/storage';
+import { WithCompletion } from '../components';
 
 export const FeatureView = React.memo(() => {
   const { fState, fDispatch, fActionType } = useFeatureStore();
@@ -67,5 +68,14 @@ export const FeatureView = React.memo(() => {
     }
   };
 
-  return <div className="w-full px-6 py-8">{getCurrentFeature()}</div>;
+  return (
+    <div className="w-full px-6 py-8">
+      <WithCompletion>{getCurrentFeature()}</WithCompletion>
+      {fState.error && (
+        <div className="text-red-600 text-center mt-5">
+          {fState.error.message}
+        </div>
+      )}
+    </div>
+  );
 });

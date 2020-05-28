@@ -5,11 +5,21 @@ const actionType = {
   CREATE_PROFILE: 'CREATE_PROFILE',
   CHANGE_PROFILE: 'CHANGE_PROFILE',
   EDIT_PROFILE: 'EDIT_PROFILE',
-  SHOW_COOKIE_LIST: 'SHOW_COOKIE_LIST'
+  SHOW_COOKIE_LIST: 'SHOW_COOKIE_LIST',
+  SHOW_COMPLETION: 'SHOW_COMPLETION',
+  SHOW_ERROR: 'SHOW_ERROR'
 };
 
 const initialState = {
-  currentFeature: actionType.SHOW_COOKIE_LIST
+  currentFeature: actionType.SHOW_COOKIE_LIST,
+  completion: {
+    show: false,
+    message: ''
+  },
+  error: {
+    show: false,
+    message: ''
+  }
 };
 
 const reducer = (state, action) => {
@@ -20,7 +30,20 @@ const reducer = (state, action) => {
     case actionType.EDIT_PROFILE:
     case actionType.SHOW_COOKIE_LIST:
       return {
-        currentFeature: action.type
+        ...state,
+        currentFeature: action.type,
+        error: { show: false, message: '' }
+      };
+    case actionType.SHOW_COMPLETION:
+      return {
+        ...state,
+        completion: action.payload,
+        error: { show: false, message: '' }
+      };
+    case actionType.SHOW_ERROR:
+      return {
+        ...state,
+        error: action.payload
       };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

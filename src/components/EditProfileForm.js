@@ -121,14 +121,14 @@ export const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
           <div className="w-full mt-4">
             {profile.cookies.map((cookie) => (
               <div
-                className="inline-flex items-center w-full text-secondary mb-1"
+                className="inline-flex items-center w-full text-secondary"
                 key={cookie}
               >
                 <div className="px-3 py-2 flex-1 text-left">{cookie}</div>
                 <button
                   type="button"
                   onClick={() => deleteCookie(cookie)}
-                  className="text-2xl ml-4 px-4 text-red-600 focus:outline-none hover:bg-red-600 hover:text-white"
+                  className="text-2xl px-4 text-red-600 focus:outline-none hover:bg-red-600 hover:text-white"
                 >
                   x
                 </button>

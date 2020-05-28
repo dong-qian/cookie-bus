@@ -1,7 +1,7 @@
 {
   "short_name": "Cookie Bus",
   "name": "Cookie Bus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "manifest_version": 2,
   "description": "Cookie Bus is an extremely simple ONE CLICK chrome extension to import cookies",
   "icons": {
