@@ -20,7 +20,12 @@ export const ImportCookie = () => {
       const activeTab = await chromeApi.getActiveTab();
       const activeStore = await chromeApi.getStoreByTab(activeTab);
       for (const cookie of requiredCookies) {
-        await chromeApi.setCookie(cookie, activeTab, activeStore);
+        await chromeApi.setCookie(
+          cookie,
+          activeTab,
+          activeStore,
+          currentProfile
+        );
       }
       fDispatch({
         type: fActionType.SHOW_COMPLETION,

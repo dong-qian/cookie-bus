@@ -39,15 +39,24 @@ export const getActiveTab = () => {
   });
 };
 
-export const setCookie = (cookie, activeTab, activeStore) => {
+export const setCookie = (cookie, activeTab, activeStore, currentProfile) => {
   return new Promise((resolve, reject) => {
+    let domain = {};
+    if (currentProfile.keepOriginalDomain) {
+      domain = {
+        domain: cookie.domain
+      };
+    }
+
     chrome.cookies.set({
       url: activeTab.url,
       storeId: activeStore.id,
       path: '/',
       name: cookie.name,
-      value: cookie.value
+      value: cookie.value,
+      ...domain
     });
+
     resolve();
   });
 };

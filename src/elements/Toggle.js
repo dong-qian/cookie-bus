@@ -55,3 +55,12 @@ export const Toggle = (props) => {
     </span>
   );
 };
+
+export const ToggleWithLabel = (props) => (
+  <div className="flex justify-between mt-4">
+    <div className="text-sm">
+      <label className="font-medium">{props.label}</label>
+    </div>
+    <Toggle {...props} />
+  </div>
+);

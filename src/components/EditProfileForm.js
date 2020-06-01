@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Input, Button, Toggle } from '../elements';
+import { Divider, Input, Button, ToggleWithLabel } from '../elements';
 
 export const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
   const [profile, setProfile] = React.useState({
@@ -7,7 +7,8 @@ export const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
     url: '',
     cookies: [],
     allCookies: false,
-    default: false
+    default: false,
+    keepOriginalDomain: false
   });
 
   const [cookie, setCookie] = React.useState('');
@@ -57,8 +58,15 @@ export const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
     });
   };
 
+  const toogleKeepOriginalDomain = () => {
+    setProfile({
+      ...profile,
+      keepOriginalDomain: !profile.keepOriginalDomain
+    });
+  };
+
   return (
-    <form className="" onSubmit={handleUpdateProfile}>
+    <form className="" onSubmit={handleUpdateProfile} autoComplete="off">
       <div className="block text-md font-medium text-center uppercase">
         Edit Profile
       </div>
@@ -70,29 +78,27 @@ export const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
         <Input name="url" type="text" placeholder={profile.url} disabled />
       </div>
 
-      <div className="flex justify-between mt-4">
-        <div className="text-sm">
-          <label htmlFor="comments" className="font-medium">
-            Import all cookies
-          </label>
-        </div>
-        <div>
-          <Toggle on={profile.allCookies} onClick={toggoleAllCookies} />
-        </div>
-      </div>
+      <ToggleWithLabel
+        label="Import all cookies"
+        on={profile.allCookies}
+        onClick={toggoleAllCookies}
+      />
+
       <div className="text-primary-lighter text-xs">
         Uncheck to import specific cookies
       </div>
-      <div className="flex justify-between mt-4">
-        <div className="text-sm">
-          <label htmlFor="comments" className="font-medium">
-            Set as default profile
-          </label>
-        </div>
-        <div>
-          <Toggle on={profile.default} onClick={toogleDefault} />
-        </div>
-      </div>
+
+      <ToggleWithLabel
+        label="Set as default profile"
+        on={profile.default}
+        onClick={toogleDefault}
+      />
+
+      <ToggleWithLabel
+        label="Keep original domain"
+        on={profile.keepOriginalDomain}
+        onClick={toogleKeepOriginalDomain}
+      />
 
       <Divider color="border-green-500" />
 

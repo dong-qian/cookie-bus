@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Input, Button, Toggle } from '../elements';
+import { Divider, Input, Button, Toggle, ToggleWithLabel } from '../elements';
 
 export const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
   const [profile, setProfile] = React.useState({
@@ -7,7 +7,8 @@ export const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
     url: '',
     cookies: [],
     allCookies: true,
-    default: true
+    default: true,
+    keepOriginalDomain: false
   });
 
   const handleAddProfile = (e) => {
@@ -35,8 +36,15 @@ export const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
     });
   };
 
+  const toogleKeepOriginalDomain = () => {
+    setProfile({
+      ...profile,
+      keepOriginalDomain: !profile.keepOriginalDomain
+    });
+  };
+
   return (
-    <form onSubmit={handleAddProfile}>
+    <form onSubmit={handleAddProfile} autoComplete="off">
       <div className="block text-md font-medium text-center uppercase">
         Create profile
       </div>
@@ -60,17 +68,24 @@ export const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
           value={profile.url}
           placeholder="Starts with https:// or http://"
         />
-        <div className="mt-3 text-primary-lighter text-sm">
+        <div className="mt-3 text-primary-lighter text-xs">
           Ex: https://www.example.com<br></br>
         </div>
       </div>
-      <div className="flex justify-between my-4">
-        <div className="text-sm">
-          <label htmlFor="comments" className="font-medium">
-            Set as default profile
-          </label>
-        </div>
-        <Toggle on={profile.default} onClick={toogleDefault} />
+
+      <ToggleWithLabel
+        label="Set as default profile"
+        on={profile.default}
+        onClick={toogleDefault}
+      />
+
+      <ToggleWithLabel
+        label="Keep original domain"
+        on={profile.keepOriginalDomain}
+        onClick={toogleKeepOriginalDomain}
+      />
+      <div className="text-primary-lighter text-xs mt-2">
+        Used for copying cookie to same url (domain) in Incognito
       </div>
 
       <Divider />
