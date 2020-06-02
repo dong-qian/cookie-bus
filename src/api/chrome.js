@@ -1,8 +1,8 @@
 /*global chrome*/
 
-export const getAllCookies = (curerentProfile) => {
+export const getAllCookiesByStore = (curerentProfile, storeId) => {
   return new Promise((resolve, reject) => {
-    chrome.cookies.getAll({ url: curerentProfile.url }, (cookies) => {
+    chrome.cookies.getAll({ url: curerentProfile.url, storeId }, (cookies) => {
       if (!cookies) {
         return reject(`${curerentProfile.url} is invaild url`);
       }

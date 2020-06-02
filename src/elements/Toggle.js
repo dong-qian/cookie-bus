@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 
 export const Toggle = (props) => {
   const { on, onClick } = props;
@@ -6,7 +7,7 @@ export const Toggle = (props) => {
     <span
       className={`${
         on ? 'bg-secondary' : 'bg-primary'
-      } relative text-left inline-block flex-shrink-0 h-6 w-12 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:shadow-outline`}
+      } relative text-left inline-block flex-shrink-0 h-6 w-12 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none`}
       tabIndex="0"
       onClick={onClick}
     >
@@ -58,8 +59,54 @@ export const Toggle = (props) => {
 
 export const ToggleWithLabel = (props) => (
   <div className="flex justify-between mt-4">
-    <div className="text-sm">
-      <label className="font-medium">{props.label}</label>
+    <div className="text-sm flex items-center">
+      <label
+        className={`${
+          props.on && 'text-secondary-lighter text-base'
+        } font-medium mr-2`}
+      >
+        {props.label}
+      </label>
+    </div>
+    <Toggle {...props} />
+  </div>
+);
+
+export const ToggleWithLabelAndTooltip = (props) => (
+  <div className="flex justify-between mt-4">
+    <div className="text-sm flex items-center">
+      <label
+        className={`${
+          props.on && 'text-secondary-lighter text-base'
+        } font-medium mr-2`}
+      >
+        {props.label}
+      </label>
+      <div>
+        <p data-tip data-for={props.label}>
+          <svg
+            className="h-4 w-4 cursor-pointer"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fillRule="evenodd"
+              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+              clipRule="evenodd"
+            ></path>
+          </svg>
+        </p>
+        <ReactTooltip
+          multiline
+          id={props.label}
+          type="info"
+          effect="solid"
+          delayShow={150}
+          delayHide={150}
+        >
+          {props.tooltip}
+        </ReactTooltip>
+      </div>
     </div>
     <Toggle {...props} />
   </div>

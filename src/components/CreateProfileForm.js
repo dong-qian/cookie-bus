@@ -1,5 +1,11 @@
 import React from 'react';
-import { Divider, Input, Button, Toggle, ToggleWithLabel } from '../elements';
+import {
+  Divider,
+  Input,
+  Button,
+  ToggleWithLabel,
+  ToggleWithLabelAndTooltip
+} from '../elements';
 
 export const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
   const [profile, setProfile] = React.useState({
@@ -79,13 +85,23 @@ export const CreateProfileForm = ({ onSubmit, onBack, noProfile }) => {
         onClick={toogleDefault}
       />
 
-      <ToggleWithLabel
+      <ToggleWithLabelAndTooltip
         label="Keep original domain"
         on={profile.keepOriginalDomain}
         onClick={toogleKeepOriginalDomain}
+        tooltip={
+          <>
+            <p>If you choose to import cookies from</p>
+            <p>the incognito window with the same domain,</p>
+            <p>you should enable this option to make sure</p>
+            <p>the imported cookies have the exactly same</p>
+            <p>domain. This is especially useful when the</p>
+            <p>the site has a subdomain like [sub.example.com].</p>
+          </>
+        }
       />
       <div className="text-primary-lighter text-xs mt-2">
-        Used for copying cookie to same url (domain) in Incognito
+        Used for importing cookie to the same domain
       </div>
 
       <Divider />

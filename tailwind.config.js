@@ -15,9 +15,9 @@ module.exports = {
         dark: colors.green['800']
       },
       ascent: {
-        lighter: colors.indigo['200'],
-        default: colors.indigo['500'],
-        dark: colors.indigo['800']
+        lighter: colors.blue['300'],
+        default: colors.blue['500'],
+        dark: colors.blue['600']
       },
       disabled: {
         lighter: colors.gray['200'],

@@ -1,16 +1,23 @@
 import React from 'react';
-import { Button } from '../elements';
+import { Button, ToggleWithLabelAndTooltip, Divider } from '../elements';
 import * as chromeApi from '../api/chrome';
 import { useProfileStore, useFeatureStore } from '../store';
+
+const NORMAL_MODE_STORE = '0';
+const INCOGNITO_MODE_STORE = '1';
 
 export const ImportCookie = () => {
   const { pState } = useProfileStore();
   const { fDispatch, fActionType } = useFeatureStore();
+  const [incognitoMode, setIncognitoMode] = React.useState(false);
 
   const { currentProfile } = pState;
   const handleImport = async () => {
     try {
-      const allCookies = await chromeApi.getAllCookies(currentProfile);
+      const allCookies = await chromeApi.getAllCookiesByStore(
+        currentProfile,
+        incognitoMode ? INCOGNITO_MODE_STORE : NORMAL_MODE_STORE
+      );
       let requiredCookies = allCookies;
       if (!currentProfile.allCookies) {
         requiredCookies = allCookies.filter((cookie) =>
@@ -51,6 +58,10 @@ export const ImportCookie = () => {
     }
   };
 
+  const toogleWindowMode = () => {
+    setIncognitoMode((preState) => !preState);
+  };
+
   return pState.savedProfiles.length === 0 ? (
     <div className="text-center mt-4">No Profiles</div>
   ) : (
@@ -58,9 +69,26 @@ export const ImportCookie = () => {
       <div className="mb-5 text-xl uppercase text-center">
         {currentProfile.name}
       </div>
-      <Button secondary type="button" onClick={handleImport} disabled={false}>
-        Import
-      </Button>
+      <div className="mb-8">
+        <Button secondary type="button" onClick={handleImport} disabled={false}>
+          Import
+        </Button>
+      </div>
+      <Divider />
+      <div className="mt-5 text-primary-lighter">
+        <ToggleWithLabelAndTooltip
+          label="Copy from Incognito"
+          tooltip={
+            <>
+              <p>Incognito mode uses a separate cookie store. </p>
+              <p>If you intend to import the cookies from the</p>
+              <p>Incognito tab, make sure to enable this option.</p>
+            </>
+          }
+          on={incognitoMode}
+          onClick={toogleWindowMode}
+        />
+      </div>
     </>
   );
 };
