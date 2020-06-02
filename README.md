@@ -21,7 +21,7 @@
     <a href="https://chrome.google.com/webstore/detail/cookie-bus/lgaiahngangkjgjpcaamhkbecdaecfkb"><strong>Install from chrome web store (1.0.3)</strong></a>
     </br>
     </br>
-    <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.3/cookie-bus-1.0.3.zip"><strong>Download here (1.0.3) »</strong></a>
+    <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.4/cookie-bus-1.0.4.zip"><strong>Download here (1.0.4) »</strong></a>
     <br />
     <br />
     <a href="https://github.com/qiandongyq/cookie-bus/issues">Report Bug</a>
@@ -144,11 +144,11 @@ yarn install
 **Scripts**
 
 - `yarn start` - build css in watch mode and start webpack dev server
-- `yarn build` - builds css in production mode (purgecss unused css), build extension to `/release/cookie-bus-1.0.3` folder
+- `yarn build` - builds css in production mode (purgecss unused css), build extension to `/release/cookie-bus-1.0.4` folder
 
 **Load extension in Google Chrome**
 
-In [Google Chrome](https://www.google.com/chrome/), open up [chrome://extensions](chrome://extensions) in a new tab. Make sure the `Developer Mode` checkbox in the upper-right corner is turned on. Click `Load unpacked` and select the `/release/cookie-bus-1.0.3` directory in this repository - your extension should now be loaded.
+In [Google Chrome](https://www.google.com/chrome/), open up [chrome://extensions](chrome://extensions) in a new tab. Make sure the `Developer Mode` checkbox in the upper-right corner is turned on. Click `Load unpacked` and select the `/release/cookie-bus-1.0.4` directory in this repository - your extension should now be loaded.
 
 <img src="examples/load-extension.jpg" alt="load extension">
 
@@ -203,4 +203,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [version-shield]: https://img.shields.io/chrome-web-store/v/lgaiahngangkjgjpcaamhkbecdaecfkb?style=flat-square
 [version-url]: https://chrome.google.com/webstore/detail/lgaiahngangkjgjpcaamhkbecdaecfkb/publish-accepted?authuser=0&hl=en
 [downloads-url]: https://github.com/qiandongyq/cookie-bus/releases/download/1.0.0/cookie-bus.zip
-[version]: 1.0.3
+[version]: 1.0.4

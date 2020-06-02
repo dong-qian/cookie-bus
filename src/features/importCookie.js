@@ -77,7 +77,7 @@ export const ImportCookie = () => {
       <Divider />
       <div className="mt-5 text-primary-lighter">
         <ToggleWithLabelAndTooltip
-          label="Copy from Incognito"
+          label="Import from Incognito"
           tooltip={
             <>
               <p>Incognito mode uses a separate cookie store. </p>
