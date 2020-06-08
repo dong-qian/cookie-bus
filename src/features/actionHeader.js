@@ -53,9 +53,9 @@ export const ActionHeader = () => {
     try {
       const activeTab = await chromeApi.getActiveTab();
       const activeStore = await chromeApi.getStoreByTab(activeTab);
-      const cookies = await chromeApi.getAllCookiesByTab(
-        activeTab,
-        activeStore
+      const cookies = await chromeApi.getAllCookiesByStore(
+        activeTab.url,
+        activeStore.id
       );
       for (const cookie of cookies) {
         await chromeApi.removeCookie(activeTab, activeStore, cookie);
@@ -86,9 +86,9 @@ export const ActionHeader = () => {
     try {
       const activeTab = await chromeApi.getActiveTab();
       const activeStore = await chromeApi.getStoreByTab(activeTab);
-      const cookies = await chromeApi.getAllCookiesByTab(
-        activeTab,
-        activeStore
+      const cookies = await chromeApi.getAllCookiesByStore(
+        activeTab.url,
+        activeStore.id
       );
       pDispatch({ type: pActionType.SET_CURRENT_COOKIES, payload: cookies });
       fDispatch({ type: fActionType.SHOW_COOKIE_LIST });

@@ -15,7 +15,7 @@ export const ImportCookie = () => {
   const handleImport = async () => {
     try {
       const allCookies = await chromeApi.getAllCookiesByStore(
-        currentProfile,
+        currentProfile.url,
         incognitoMode ? INCOGNITO_MODE_STORE : NORMAL_MODE_STORE
       );
       let requiredCookies = allCookies;
@@ -71,7 +71,7 @@ export const ImportCookie = () => {
       </div>
       <div className="mb-8">
         <Button secondary type="button" onClick={handleImport} disabled={false}>
-          Import
+          aa
         </Button>
       </div>
       <Divider />

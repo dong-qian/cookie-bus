@@ -1,33 +1,16 @@
 /*global chrome*/
 
-export const getAllCookiesByStore = (curerentProfile, storeId) => {
+export const getAllCookiesByStore = (url, storeId) => {
   return new Promise((resolve, reject) => {
-    chrome.cookies.getAll({ url: curerentProfile.url, storeId }, (cookies) => {
+    chrome.cookies.getAll({ url, storeId }, (cookies) => {
       if (!cookies) {
-        return reject(`${curerentProfile.url} is invaild url`);
+        return reject(`${url} is invaild url`);
       }
       if (cookies.length === 0) {
         return reject(`No cookies found`);
       }
       resolve(cookies);
     });
-  });
-};
-
-export const getAllCookiesByTab = (activeTab, ActiveStore) => {
-  return new Promise((resolve, reject) => {
-    chrome.cookies.getAll(
-      { url: activeTab.url, storeId: ActiveStore.id },
-      (cookies) => {
-        if (!cookies) {
-          return reject(`${activeTab.url} is invaild url`);
-        }
-        if (cookies.length === 0) {
-          return reject(`No cookies found`);
-        }
-        resolve(cookies);
-      }
-    );
   });
 };
 
@@ -54,6 +37,9 @@ export const setCookie = (cookie, activeTab, activeStore, currentProfile) => {
       path: '/',
       name: cookie.name,
       value: cookie.value,
+      sameSite: cookie.sameSite,
+      expirationDate: cookie.expirationDate,
+      secure: cookie.secure,
       ...domain
     });
 
