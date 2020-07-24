@@ -76,11 +76,11 @@ export const EditProfileForm = ({ editProfile, onSubmit, onBack }) => {
       <div className="block text-md font-medium text-center uppercase">
         Edit Profile
       </div>
-      <div className="mt-1 mt-4">
+      <div className="mt-4">
         <Input name="name" type="text" placeholder={profile.name} disabled />
       </div>
 
-      <div className="mt-1 mt-4">
+      <div className="mt-4">
         <Input name="url" type="text" placeholder={profile.url} disabled />
       </div>
 

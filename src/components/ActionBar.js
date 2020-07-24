@@ -13,7 +13,7 @@ export const ActionBar = ({ actions }) => {
               a.active ? 'bg-secondary' : 'bg-primary'
             } p-3 flex flex-row justify-center items-center w-full h-full hover:bg-secondary cursor-pointer`}
           >
-            <a.Icon />
+            {a.Icon && <a.Icon />}
           </div>
           {/* </Tooltip> */}
         </React.Fragment>

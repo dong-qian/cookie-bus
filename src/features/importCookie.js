@@ -69,9 +69,9 @@ export const ImportCookie = () => {
       <div className="mb-5 text-xl uppercase text-center">
         {currentProfile.name}
       </div>
-      <div className="mb-8">
+      <div className="mb-5">
         <Button secondary type="button" onClick={handleImport} disabled={false}>
-          aa
+          Import
         </Button>
       </div>
       <Divider />

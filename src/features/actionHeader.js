@@ -1,7 +1,8 @@
 import React from 'react';
 import { ActionBar } from '../components';
-import { useFeatureStore, useProfileStore } from '../store';
+import { useFeatureStore, useProfileStore, useCookieStore } from '../store';
 import * as chromeApi from '../api/chrome';
+import Cookies from 'js-cookie';
 
 const DeleteIcon = () => (
   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
@@ -48,6 +49,7 @@ const ImportCookieIcon = () => (
 export const ActionHeader = () => {
   const { fState, fDispatch, fActionType } = useFeatureStore();
   const { pDispatch, pActionType } = useProfileStore();
+  const { cDispatch, cActionType } = useCookieStore();
 
   const handleDeleteAllCookies = async () => {
     try {
@@ -82,15 +84,16 @@ export const ActionHeader = () => {
     }
   };
 
-  const handleShowAllCookies = async () => {
+  const handleShowAllCookies = () => {
     try {
-      const activeTab = await chromeApi.getActiveTab();
-      const activeStore = await chromeApi.getStoreByTab(activeTab);
-      const cookies = await chromeApi.getAllCookiesByStore(
-        activeTab.url,
-        activeStore.id
-      );
-      pDispatch({ type: pActionType.SET_CURRENT_COOKIES, payload: cookies });
+      const cookies = Cookies.get();
+      cDispatch({
+        type: cActionType.SET_COOKIES,
+        payload: Object.keys(cookies).map((key) => ({
+          name: key,
+          value: cookies[key]
+        }))
+      });
       fDispatch({ type: fActionType.SHOW_COOKIE_LIST });
     } catch (err) {
       fDispatch({
