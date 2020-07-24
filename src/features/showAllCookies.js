@@ -22,8 +22,8 @@ export const ShowAllCookies = () => {
       const activeTab = await chromeApi.getActiveTab();
       const activeStore = await chromeApi.getStoreByTab(activeTab);
       await chromeApi.addCookie(activeTab, activeStore, {
-        name: cookieName,
-        value: cookieValue
+        name: cookieName.trim(),
+        value: cookieValue.trim()
       });
       const cookies = await chromeApi.getAllCookiesByStore(
         activeTab.url,
