@@ -47,6 +47,23 @@ export const setCookie = (cookie, activeTab, activeStore, currentProfile) => {
   });
 };
 
+export const addCookie = (activeTab, activeStore, cookie) => {
+  return new Promise((resolve, reject) => {
+    chrome.cookies.set({
+      url: activeTab.url,
+      storeId: activeStore.id,
+      path: '/',
+      name: cookie.name,
+      value: cookie.value,
+      sameSite: cookie.sameSite,
+      expirationDate: cookie.expirationDate,
+      secure: cookie.secure
+    });
+
+    resolve();
+  });
+};
+
 export const getStoreByTab = (tab) => {
   return new Promise((resolve, reject) => {
     chrome.cookies.getAllCookieStores((cookieStores) => {

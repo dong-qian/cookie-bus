@@ -2,7 +2,6 @@ import React from 'react';
 import { ActionBar } from '../components';
 import { useFeatureStore, useProfileStore, useCookieStore } from '../store';
 import * as chromeApi from '../api/chrome';
-import Cookies from 'js-cookie';
 
 const DeleteIcon = () => (
   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
@@ -84,18 +83,22 @@ export const ActionHeader = () => {
     }
   };
 
-  const handleShowAllCookies = () => {
+  const handleShowAllCookies = async () => {
     try {
-      const cookies = Cookies.get();
+      const activeTab = await chromeApi.getActiveTab();
+      const activeStore = await chromeApi.getStoreByTab(activeTab);
+      const cookies = await chromeApi.getAllCookiesByStore(
+        activeTab.url,
+        activeStore.id
+      );
+      console.log('cookies', cookies);
       cDispatch({
         type: cActionType.SET_COOKIES,
-        payload: Object.keys(cookies).map((key) => ({
-          name: key,
-          value: cookies[key]
-        }))
+        payload: cookies
       });
       fDispatch({ type: fActionType.SHOW_COOKIE_LIST });
     } catch (err) {
+      console.log('err', err);
       fDispatch({
         type: fActionType.SHOW_ERROR,
         payload: { show: true, message: err }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '../elements';
 
-export const CookieList = ({ cookieList, onBack, onSearch, deleteCookie }) => {
+export const CookieList = ({ cookieList, onBack, deleteCookie }) => {
   return (
     <>
       {cookieList.length > 0 ? (

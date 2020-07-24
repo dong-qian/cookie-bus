@@ -16,7 +16,7 @@
     Import Cookies from any domain
     <br />
     </br>
-    <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.4/cookie-bus-1.0.4.zip"><strong>Download here (1.0.4) »</strong></a>
+    <a href="https://github.com/qiandongyq/cookie-bus/releases/download/1.0.5/cookie-bus-1.0.5.zip"><strong>Download here (1.0.5) »</strong></a>
     <br />
     <br />
     <a href="https://github.com/qiandongyq/cookie-bus/issues">Report Bug</a>
@@ -139,11 +139,11 @@ yarn install
 **Scripts**
 
 - `yarn start` - build css in watch mode and start webpack dev server
-- `yarn build` - builds css in production mode (purgecss unused css), build extension to `/release/cookie-bus-1.0.4` folder
+- `yarn build` - builds css in production mode (purgecss unused css), build extension to `/release/cookie-bus-1.0.5` folder
 
 **Load extension in Google Chrome**
 
-In [Google Chrome](https://www.google.com/chrome/), open up [chrome://extensions](chrome://extensions) in a new tab. Make sure the `Developer Mode` checkbox in the upper-right corner is turned on. Click `Load unpacked` and select the `/release/cookie-bus-1.0.4` directory in this repository - your extension should now be loaded.
+In [Google Chrome](https://www.google.com/chrome/), open up [chrome://extensions](chrome://extensions) in a new tab. Make sure the `Developer Mode` checkbox in the upper-right corner is turned on. Click `Load unpacked` and select the `/release/cookie-bus-1.0.5` directory in this repository - your extension should now be loaded.
 
 <img src="examples/load-extension.jpg" alt="load extension">
 
@@ -194,4 +194,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [release-url]: https://github.com/qiandongyq/cookie-bus/releases
 [downloads-shield]: https://img.shields.io/github/downloads/qiandongyq/cookie-bus/total.svg?style=flat-square
 [downloads-url]: https://github.com/qiandongyq/cookie-bus/releases/download/1.0.0/cookie-bus.zip
-[version]: 1.0.4
+[version]: 1.0.5

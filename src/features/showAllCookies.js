@@ -1,8 +1,8 @@
 import React from 'react';
 import { useFeatureStore, useCookieStore } from '../store';
 import { CookieList } from '../components';
-import Cookies from 'js-cookie';
 import { Divider, Input, Button } from '../elements';
+import * as chromeApi from '../api/chrome';
 
 export const ShowAllCookies = () => {
   const [filteredList, setFilteredList] = React.useState([]);
@@ -17,16 +17,21 @@ export const ShowAllCookies = () => {
     setFilteredList(cState.cookies);
   }, [cState.cookies]);
 
-  const addCookie = () => {
+  const addCookie = async () => {
     if (cookieName && cookieValue) {
-      Cookies.set(cookieName, cookieValue);
-      const cookies = Cookies.get();
+      const activeTab = await chromeApi.getActiveTab();
+      const activeStore = await chromeApi.getStoreByTab(activeTab);
+      await chromeApi.addCookie(activeTab, activeStore, {
+        name: cookieName,
+        value: cookieValue
+      });
+      const cookies = await chromeApi.getAllCookiesByStore(
+        activeTab.url,
+        activeStore.id
+      );
       cDispatch({
         type: cActionType.SET_COOKIES,
-        payload: Object.keys(cookies).map((key) => ({
-          name: key,
-          value: cookies[key]
-        }))
+        payload: cookies
       });
       setCookieName('');
       setCookieValue('');
@@ -45,15 +50,17 @@ export const ShowAllCookies = () => {
     );
   };
 
-  const handleDeleteCookie = (cookie) => {
-    Cookies.remove(cookie.name);
-    const cookies = Cookies.get();
+  const handleDeleteCookie = async (cookie) => {
+    const activeTab = await chromeApi.getActiveTab();
+    const activeStore = await chromeApi.getStoreByTab(activeTab);
+    await chromeApi.removeCookie(activeTab, activeStore, cookie);
+    const cookies = await chromeApi.getAllCookiesByStore(
+      activeTab.url,
+      activeStore.id
+    );
     cDispatch({
       type: cActionType.SET_COOKIES,
-      payload: Object.keys(cookies).map((key) => ({
-        name: key,
-        value: cookies[key]
-      }))
+      payload: cookies
     });
   };
 
